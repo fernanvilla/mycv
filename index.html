@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernán Alonso Villa Garzón | Profesor & Investigador</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --text-color: #2d3748;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .profile-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: 'Merriweather', serif;
+        }
+
+        .profile-title p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info a, .contact-info span {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h2 i {
+            color: var(--accent-color);
+        }
+
+        .item {
+            margin-bottom: 1.75rem;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: #718096;
+            font-weight: 500;
+            background-color: #edf2f7;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .item-subtitle {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .tag {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #718096;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background-color: white;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-title h1 {
+                font-size: 2rem;
+            }
+            nav ul li a {
+                padding: 0.75rem 1rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-container">
+            <div class="profile-title">
+                <h1>Fernán Alonso Villa Garzón</h1>
+                <p>Doctor en Ingeniería - Sistemas | Profesor e Investigador Universitario</p>
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-university"></i> Universidad Nacional de Colombia (Medellín)</span>
+                <a href="mailto:favillao@unal.edu.co"><i class="fas fa-envelope"></i> favillao@unal.edu.co</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">Perfil</a></li>
+            <li><a href="#education">Educación</a></li>
+            <li><a href="#experience">Experiencia</a></li>
+            <li><a href="#research">Investigación</a></li>
+            <li><a href="#publications">Publicaciones</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Perfil / Resumen -->
+        <section id="about">
+            <h2><i class="fas fa-user-circle"></i> Perfil Académico</h2>
+            <p style="margin-bottom: 1rem;">
+                Investigador y académico con amplia trayectoria en ciencias de la computación, inteligencia artificial, analítica de datos y salud pública. Doctor y Magíster en Ingeniería de Sistemas por la Universidad Nacional de Colombia Sede Medellín. 
+            </p>
+            <p>
+                Actualmente se desempeña como docente e investigador, habiendo ocupado cargos directivos como Director de Área Curricular de Sistemas e Informática y Director Encargado del Departamento de Ciencias de la Computación y de la Decisión.
+            </p>
+            <div style="margin-top: 1.5rem;">
+                <strong>Idiomas:</strong> Español (Nativo), Inglés (Bueno/Aceptable)
+            </div>
+        </section>
+
+        <!-- Educación -->
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Doctorado en Ingeniería - Sistemas</span>
+                    <span class="item-date">Agosto 2010 - Abril 2016</span>
+                </div>
+                <div class="item-subtitle">Universidad Nacional de Colombia Sede Medellín</div>
+                <div class="item-desc">Tesis: Regularización de Redes Neuronales Tipo Cascada Correlación para el Pronóstico de Series de Tiempo.</div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Maestría en Ingeniería - Ingeniería de Sistemas</span>
+                    <span class="item-date">Enero 2008 - Julio 2010</span>
+                </div>
+                <div class="item-subtitle">Universidad Nacional de Colombia Sede Medellín</div>
+                <div class="item-desc">Tesis: Modelado y predicción del precio de la electricidad en mercados de corto plazo liberalizados usando redes cascada correlación.</div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Ingeniería de Sistemas e Informática</span>
+                    <span class="item-date">Enero 2003 - Marzo 2008</span>
+                </div>
+                <div class="item-subtitle">Universidad Nacional de Colombia Sede Medellín</div>
+                <div class="item-desc">Tesis: Entrenamiento de Perceptrones Multicapa Usando Rprop (resilent backpropagation).</div>
+            </div>
+        </section>
+
+        <!-- Experiencia Profesional y Académica -->
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Experiencia Profesional y Docencia</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Universidad Nacional de Colombia Sede Medellín</span>
+                    <span class="item-date">Agosto 2016 - Presente</span>
+                </div>
+                <div class="item-subtitle">Profesor / Actividades de Administración y Docencia</div>
+                <ul style="margin-left: 1.2rem; margin-top: 0.5rem; font-size: 0.95rem; color: #4a5568;">
+                    <li>Director de Área Curricular de Sistemas e Informática (Mayo 2019).</li>
+                    <li>Director Encargado del Departamento de Ciencias de la Computación y de la Decisión (Septiembre 2019).</li>
+                    <li>Dirección del Semillero Sci-Soft: Ciencias de la Computación e Ingeniería de Software.</li>
+                    <li>Docencia en cursos de pregrado y posgrado (Teoría de la Computación, Ciencia de Datos Aplicada, Sistemas de Bases de Datos Masivos, entre otros).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Líneas de Investigación y Áreas -->
+        <section id="research">
+            <h2><i class="fas fa-microscope"></i> Líneas de Investigación & Áreas de Actuación</h2>
+            <div class="tags-container">
+                <span class="tag">Teoría y Métodos de Ingeniería de Software</span>
+                <span class="tag">Desarrollo de Software para las Ciencias y Productos de Datos</span>
+                <span class="tag">Transformación Digital y Tecnologías Emergentes</span>
+                <span class="tag">Analítica en Salud</span>
+                <span class="tag">Enseñanza de la Ingeniería de Software y Ciencia de Datos</span>
+                <span class="tag">Arquitectura de Soluciones</span>
+                <span class="tag">Arquitectura y Desarrollo de Software</span>
+                <span class="tag">Informática Clínica y de la Salud</span>
+            </div>
+        </section>
+
+        <!-- Publicaciones Seleccionadas -->
+        <section id="publications">
+            <h2><i class="fas fa-book"></i> Publicaciones Seleccionadas</h2>
+            
+            <div class="item" style="margin-bottom: 1.25rem;">
+                <div class="item-title" style="font-size: 1rem; font-weight: 600;">ColombiaTuitionSET: Labeled dataset for exploring socioeconomic status, career selection, and tuition fees at a Colombian public university</div>
+                <div class="item-desc" style="font-size: 0.9rem; color: #4a5568;">Villa Garzón, F. A., Branch Bedoya, J. W., Muñoz Alarcón, M. A. (2025). <em>Data in Brief</em>, Elsevier, Vol. 58, 1-16.</div>
+            </div>
+
+            <div class="item" style="margin-bottom: 1.25rem;">
+                <div class="item-title" style="font-size: 1rem; font-weight: 600;">Metamodel for the integration of PM 2.5 particulate matter data and public health events</div>
+                <div class="item-desc" style="font-size: 0.9rem; color: #4a5568;">Villa Garzón, F. A., Montealegre Hernández, N. A., Piñeros Jiménez, J. G. (2024). <em>RISTI - Revista Iberica de Sistemas e Tecnologias de Informacao</em>.</div>
+            </div>
+
+            <div class="item" style="margin-bottom: 1.25rem;">
+                <div class="item-title" style="font-size: 1rem; font-weight: 600;">Control del sobreajuste en redes neuronales tipo cascada correlación aplicado a la predicción de precios de contratos de electricidad</div>
+                <div class="item-desc" style="font-size: 0.9rem; color: #4a5568;">Villa Garzón, F. A. (2015). <em>Revista Ingenierías Universidad de Medellín</em>, Vol. 14, 26, 161-176.</div>
+            </div>
+
+            <div class="item">
+                <div class="item-title" style="font-size: 1rem; font-weight: 600;">Contaminación atmosférica y sus efectos sobre la salud de los habitantes del Valle de Aburrá, 2008-2015</div>
+                <div class="item-desc" style="font-size: 0.9rem; color: #4a5568;">Villa Garzón, F. A., et al. (2018). Libro resultado de investigación, Digital Express. ISBN: 978-958-8513-92-8.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fernán Alonso Villa Garzón. Creado para despliegue en GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
